@@ -749,7 +749,13 @@ section {
     top: calc(100%) !important;
     left: calc(50%) !important;
   }
+  
+  .counts {
+    background: #f1f7fd;
+    padding: 0px !important;
+  }
 }
+
 
 
 /*--------------------------------------------------------------

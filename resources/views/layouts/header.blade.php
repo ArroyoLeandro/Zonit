@@ -3,10 +3,10 @@
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:contact@mail.com">contact@mail.com</a>
-        <i class="icofont-phone"></i> <a href="tel:+541111111111">+54 1111111111</a>
-        <i class="icofont-google-map"></i> <a href="#contact">Calle 100, Buenos Aires - Argentina</a>
-        <i class="icofont-whatsapp"  style="background-color:#fff; color:#25d366;"></i> <a href="https://wa.me/541111111111?text=Me%20pongo%20en%20contacto%20por:" target="_blank">+54 1111111111</a>
+        <i class="icofont-envelope"></i> <a href="mailto:{{ env('email_contact') }}">{{ env('email_contact') }}</a>
+        <i class="icofont-phone"></i> <a href="tel:{{ env('telefono') }}">{{ env('telefono_m') }}</a>
+        <i class="icofont-google-map"></i> <a href="#contact">{{ env('direccion') }}</a>
+        <i class="icofont-whatsapp"  style="background-color:#fff; color:#25d366;"></i> <a href="https://wa.me/{{ env('telefono') }}?text=Me%20pongo%20en%20contacto%20por:" target="_blank">{{ env('telefono_m') }}</a>
       </div>
       <!-- <div class="social-links">
         <a href="#" class="twitter"><i class="icofont-twitter"></i></a>

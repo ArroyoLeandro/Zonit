@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('/aviso', 'HomeController@aviso')->name('aviso');

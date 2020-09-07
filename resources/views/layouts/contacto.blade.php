@@ -22,29 +22,29 @@
                 <div class="address">
                   <i class="icofont-google-map"></i>
                   <h4>Direccion:</h4>
-                  <p>calle 100, Buenos Aires - Argentina</p>
+                  <p>{{ env('direccion') }}</p>
                 </div>
   
                 <div class="email">
                   <i class="icofont-envelope"></i>
                   <h4>Email:</h4>
-                  <p><a href="mailto:info@mail.com">info@mail.com</a></p>
+                  <p><a href="mailto:{{ env('email_contact') }}">{{ env('email_contact') }}</a></p>
                 </div>
   
                 <div class="phone">
                   <i class="icofont-phone"></i>
                   <h4>Telefono:</h4>
-                  <p><a href="tel:+541111111111">+54 1111111111</a></p>
+                  <p><a href="tel:{{ env('telefono') }}">{{ env('telefono_m') }}</a></p>
                 </div>
   
                 <div class="phone whatsapp">
-                  <a href="https://wa.me/541111111111?text=Me%20pongo%20en%20contacto%20por:" target="_blank">
+                  <a href="https://wa.me/{{ env('telefono') }}?text=Me%20pongo%20en%20contacto%20por:" target="_blank">
                     <i class="icofont-whatsapp" style="color:#25d366"></i>
                     <h4>WhatsApp:</h4>
-                    <p>+54 1111111111</p>
+                    <p>{{ env('telefono_m') }}</p>
                   </a>
                 </div>
-                <!-- <li><a href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20el%20precio%20del%20coche" class="whatsapp" target="_blank">
+                <!-- <li><a href="https://wa.me/{{ env('telefono') }}?text=Me%20gustaría%20saber%20el%20precio%20del%20coche" class="whatsapp" target="_blank">
                   <i class="bx bxl-whatsapp whatsapp-icon"></i>
                </a></li> -->
               </div>
@@ -53,7 +53,8 @@
   
             <div class="col-lg-8 mt-5 mt-lg-0">
   
-              <form action="" method="post" role="form" class="php-email-form">
+              <form action="{{ route('aviso') }}" method="post" role="form" class="php-email-form">
+                @csrf
                 <div class="form-row">
                   <div class="col-md-6 form-group">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required/>

@@ -23,7 +23,7 @@ class Aviso extends Mailable  // implements ShouldQueue
     {
         // dd($this->contacto);
        $sendingg= $this->view('contacto')
-        ->from(env('email'))
+        ->from(env('email_contact'))
         ->subject($this->contacto->name .' se ha contactado con usted a traves de la pagina.');
         return $sendingg;
     }

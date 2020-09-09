@@ -53,10 +53,17 @@
   <script src="{{ asset('vendor/waypoints/jquery.waypoints.min.js')}}"></script>
   <script src="{{ asset('vendor/counterup/counterup.min.js')}}"></script>
   <script src="{{ asset('vendor/owl.carousel/owl.carousel.min.js')}}"></script>
+  
+  {{-- alertas personalizadas --}}
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+  
 
   <!-- Main JS File -->
   <script src="{{ asset('js/main.js')}}"></script>
+
+
+
 
   <script>
     function activar(elemento) {
@@ -65,11 +72,21 @@
       $('#'+elemento).addClass('active');
     }
 
+//alertas 
 
+function ejecutarAlerta(mensaje, icon,titulo) {
+          Swal.fire({
+            icon: icon,
+            title: titulo,
+            text: mensaje,
+            confirmButtonText:'Aceptar',
+          });
+}
   </script>
 
-
     <script >
+
+
 
         $(document).ready(function() {
 
@@ -79,6 +96,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+           
             $().ready(function() {
     
             @yield('js')
@@ -86,6 +104,26 @@
             });
         });
         </script>
+
+
+
+
+{{-- Mensaje de alerta --}}
+@if(Session::has('msj'))
+<input type="text" id="msj" value="{{ Session::pull("msj") }}" class="d-none">
+<script>
+   ejecutarAlerta(document.getElementById("msj").value,'success','Genial!');
+</script>
+@endif
+@if(Session::has('err'))
+<input type="text" id="msj" value="{{ Session::pull("err") }}" class="d-none">
+<script>
+  ejecutarAlerta(document.getElementById("msj").value,'error','Oops...');
+</script>
+@endif
+
+
+{{-- fin mensaje alerta --}}
     </body>
     </html>
     

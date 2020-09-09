@@ -67,9 +67,9 @@
                   <input type="text" class="form-control" name="asunto" id="asunto" placeholder="Asunto" required/>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+                  <textarea class="form-control" name="mensaje" id="mensaje" rows="5" placeholder="Mensaje" required></textarea>
                 </div>
-                <div class="text-center"><button type="submit">Enviar Mensaje</button></div>
+                <div class="text-center"><button type="submit" id="enviarForm">Enviar Mensaje</button></div>
               </form>
   
             </div>
